@@ -576,10 +576,7 @@ function AppContent() {
     <div className="App">
       <header className="App-header">
         <div className="container">
-          <h1>🚗 Catálogo de Carros</h1>
-          <p style={{ color: '#4CAF50', fontSize: '14px', margin: '5px 0', fontWeight: 'bold' }}>
-            ✅ TESTE DEPLOY - Deploy funcionando perfeitamente! 🚀
-          </p>
+                     <h1>🚗 Catálogo de Carros</h1>
           <div className="header-buttons">
             <button 
               onClick={() => setMostrarFormulario(true)}
