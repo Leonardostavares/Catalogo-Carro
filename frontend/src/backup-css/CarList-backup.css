@@ -1,0 +1,136 @@
+.car-list {
+  padding: 20px 0;
+}
+
+.car-list h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.car-list .subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.brands-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.brand-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.brand-title {
+  color: #34495e;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .car-list h2 {
+    font-size: 2rem;
+  }
+  
+  .brand-section {
+    padding: 20px;
+  }
+  
+  .brand-title {
+    font-size: 1.5rem;
+  }
+  
+  .cars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-list h2 {
+    font-size: 1.8rem;
+  }
+  
+  .car-list .subtitle {
+    font-size: 1rem;
+  }
+  
+  .brand-section {
+    padding: 15px;
+  }
+  
+  .brand-title {
+    font-size: 1.3rem;
+  }
+  
+  .cars-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Estados especiais */
+.car-list .loading,
+.car-list .error,
+.car-list .empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.car-list .loading p,
+.car-list .error p,
+.car-list .empty p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-top: 15px;
+}
+
+.car-list .error p {
+  color: #e74c3c;
+}
+
+.car-list .retry-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.car-list .retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(45deg, #2980b9, #3498db);
+}
