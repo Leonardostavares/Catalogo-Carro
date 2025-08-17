@@ -75,7 +75,7 @@ const Notification = ({ message, type = 'success', isVisible, onClose, duration 
       }
       return 'O carro foi removido permanentemente do catálogo com sucesso! 🎯';
     }
-    return message;
+    return message || 'Operação realizada com sucesso!';
   };
 
   const getAnimationClass = () => {

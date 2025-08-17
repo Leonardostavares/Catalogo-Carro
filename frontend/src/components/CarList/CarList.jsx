@@ -121,13 +121,31 @@ const CarList = ({ cars: carrosExternos, onCarsUpdate, recarregar, onRecarregarC
       let mensagemExclusao = 'Carro excluído com sucesso!';
       if (carroParaExcluir) {
         const { nome_modelo, ano, cor, marca } = carroParaExcluir;
-        mensagemExclusao = `🚗 ${marca} ${nome_modelo} (${ano}) - ${cor} removido do catálogo! 🎯`;
+        
+        // Verificar se a marca existe, senão usar "Carro"
+        const marcaExibicao = marca && marca.trim() !== '' ? marca : 'Carro';
+        
+        // Verificar se o modelo existe, senão usar "Modelo"
+        const modeloExibicao = nome_modelo && nome_modelo.trim() !== '' ? nome_modelo : 'Modelo';
+        
+        // Verificar se o ano existe, senão usar "N/A"
+        const anoExibicao = ano ? ano : 'N/A';
+        
+        // Verificar se a cor existe, senão usar "Cor não informada"
+        const corExibicao = cor && cor.trim() !== '' ? cor : 'Cor não informada';
+        
+        mensagemExclusao = `🚗 ${marcaExibicao} ${modeloExibicao} (${anoExibicao}) - ${corExibicao} removido do catálogo! 🎯`;
       }
       
       showDelete(mensagemExclusao);
     } catch (erro) {
       console.error('Erro ao deletar carro:', erro);
       showError(`Erro ao deletar carro: ${erro.message}`);
+    } finally {
+      // Garantir que sempre seja mostrada uma notificação de sucesso
+      if (!carroParaExcluir) {
+        showDelete('🚗 Carro removido do catálogo com sucesso! 🎯');
+      }
     }
   };
 
