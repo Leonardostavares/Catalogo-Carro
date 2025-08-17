@@ -115,92 +115,98 @@ const EditCarModal = ({ car, isOpen, onClose, onSave }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="edit-form">
-          <div className="form-group">
-            <label htmlFor="nome_modelo">Nome do Modelo:</label>
-            <input
-              type="text"
-              id="nome_modelo"
-              name="nome_modelo"
-              value={formData.nome_modelo}
-              onChange={handleInputChange}
-              required
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="nome_modelo">Nome do Modelo:</label>
+              <input
+                type="text"
+                id="nome_modelo"
+                name="nome_modelo"
+                value={formData.nome_modelo}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="ano">Ano:</label>
+              <input
+                type="number"
+                id="ano"
+                name="ano"
+                value={formData.ano}
+                onChange={handleInputChange}
+                min="1900"
+                max={new Date().getFullYear() + 1}
+                required
+              />
+            </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="ano">Ano:</label>
-            <input
-              type="number"
-              id="ano"
-              name="ano"
-              value={formData.ano}
-              onChange={handleInputChange}
-              min="1900"
-              max={new Date().getFullYear() + 1}
-              required
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="combustivel">Combustível:</label>
+              <select
+                id="combustivel"
+                name="combustivel"
+                value={formData.combustivel}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Selecione...</option>
+                <option value="FLEX">Flex</option>
+                <option value="GASOLINA">Gasolina</option>
+                <option value="DIESEL">Diesel</option>
+                <option value="ELETRICO">Elétrico</option>
+                <option value="HIBRIDO">Híbrido</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="num_portas">Número de Portas:</label>
+              <select
+                id="num_portas"
+                name="num_portas"
+                value={formData.num_portas}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Selecione...</option>
+                <option value="2">2 portas</option>
+                <option value="3">3 portas</option>
+                <option value="4">4 portas</option>
+                <option value="5">5 portas</option>
+              </select>
+            </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="combustivel">Combustível:</label>
-            <select
-              id="combustivel"
-              name="combustivel"
-              value={formData.combustivel}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">Selecione...</option>
-              <option value="FLEX">Flex</option>
-              <option value="GASOLINA">Gasolina</option>
-              <option value="DIESEL">Diesel</option>
-              <option value="ELETRICO">Elétrico</option>
-              <option value="HIBRIDO">Híbrido</option>
-            </select>
-          </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="cor">Cor:</label>
+              <input
+                type="text"
+                id="cor"
+                name="cor"
+                value={formData.cor}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="num_portas">Número de Portas:</label>
-            <select
-              id="num_portas"
-              name="num_portas"
-              value={formData.num_portas}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">Selecione...</option>
-              <option value="2">2 portas</option>
-              <option value="3">3 portas</option>
-              <option value="4">4 portas</option>
-              <option value="5">5 portas</option>
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="cor">Cor:</label>
-            <input
-              type="text"
-              id="cor"
-              name="cor"
-              value={formData.cor}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="valor">Valor (R$):</label>
-            <input
-              type="number"
-              id="valor"
-              name="valor"
-              value={formData.valor}
-              onChange={handleInputChange}
-              min="0"
-              step="0.01"
-              placeholder="Ex: 132851.99"
-              required
-            />
+            <div className="form-group">
+              <label htmlFor="valor">Valor (R$):</label>
+              <input
+                type="number"
+                id="valor"
+                name="valor"
+                value={formData.valor}
+                onChange={handleInputChange}
+                min="0"
+                step="0.01"
+                placeholder="Ex: 132851.99"
+                required
+              />
+            </div>
           </div>
 
           <div className="modal-footer">
