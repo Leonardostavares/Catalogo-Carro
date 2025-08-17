@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -17,12 +17,12 @@
 .modal-content {
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.9));
   backdrop-filter: blur(20px);
-  border-radius: 24px;
+  border-radius: 20px;
   padding: 0;
-  max-width: 500px;
+  max-width: 480px;
   width: 100%;
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
   animation: slideIn 0.3s ease-out;
   position: relative;
   overflow: hidden;
@@ -31,97 +31,113 @@
 .modal-header {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
-  padding: 30px 35px;
+  padding: 25px 30px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
-.modal-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  animation: shimmer 3s infinite;
-}
-
-.modal-icon {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
+.delete-icon {
+  font-size: 2rem;
   animation: pulse 2s infinite;
 }
 
-.modal-title {
-  font-size: 2rem;
+.modal-header h2 {
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 15px 0;
-  position: relative;
-  z-index: 1;
+  margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.modal-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin: 0;
-  position: relative;
-  z-index: 1;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.modal-body {
-  padding: 35px;
-  text-align: center;
-}
-
-.modal-message {
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
-  color: #f1f5f9;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.delete-content {
+  padding: 30px;
+}
+
+.warning-message {
+  text-align: center;
   margin-bottom: 25px;
-  line-height: 1.6;
-  font-weight: 500;
+}
+
+.warning-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+}
+
+.warning-message h3 {
+  font-size: 1.3rem;
+  color: #f1f5f9;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.warning-message p {
+  color: #94a3b8;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .car-details {
   background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
   backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: 16px;
+  padding: 20px;
   margin: 25px 0;
   border: 1px solid rgba(239, 68, 68, 0.3);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.car-details-title {
+.car-details h4 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #f87171;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
-.car-info {
+.car-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  text-align: left;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
 .car-info-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 .car-info-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #94a3b8;
   text-transform: uppercase;
@@ -129,125 +145,73 @@
 }
 
 .car-info-value {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #f1f5f9;
 }
 
-.modal-footer {
-  padding: 30px 35px;
+.warning-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.warning-text p {
+  color: #f87171;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.modal-actions {
+  padding: 25px 30px;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.8));
   backdrop-filter: blur(15px);
   border-top: 1px solid rgba(239, 68, 68, 0.2);
   display: flex;
-  gap: 18px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
 }
 
-.modal-button {
-  padding: 18px 36px;
+.cancel-btn, .delete-confirm-btn {
+  padding: 15px 30px;
   border: none;
-  border-radius: 20px;
-  font-size: 1.1rem;
-  font-weight: 700;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
-  min-width: 160px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  min-width: 140px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.modal-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.modal-button:hover::before {
-  left: 100%;
-}
-
-.modal-button.danger {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: white;
-  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.5);
-}
-
-.modal-button.danger:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(239, 68, 68, 0.6);
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-}
-
-.modal-button.secondary {
+.cancel-btn {
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.8));
   color: #f1f5f9;
   border: 2px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
 }
 
-.modal-button.secondary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, rgba(30, 41, 59, 1), rgba(15, 23, 42, 0.9));
+.cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   border-color: #6366f1;
 }
 
-.modal-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
-}
-
-.modal-button:disabled:hover {
-  transform: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.modal-close {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
+.delete-confirm-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
 }
 
-.modal-close:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-}
-
-.loading-spinner {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top: 2px solid white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-right: 8px;
+.delete-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(239, 68, 68, 0.5);
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
 }
 
 @keyframes fadeIn {
@@ -270,15 +234,6 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -288,9 +243,35 @@
   }
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Animação especial para o botão de exclusão */
+.delete-confirm-btn {
+  animation: deleteButtonGlow 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.delete-confirm-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.delete-confirm-btn:hover::before {
+  left: 100%;
+}
+
+@keyframes deleteButtonGlow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.3);
+  }
 }
 
 /* Responsive Design */
@@ -300,39 +281,35 @@
   }
   
   .modal-header {
-    padding: 25px 30px;
+    padding: 20px 25px;
   }
   
-  .modal-icon {
-    font-size: 3rem;
+  .delete-icon {
+    font-size: 1.8rem;
   }
   
-  .modal-title {
-    font-size: 1.6rem;
+  .modal-header h2 {
+    font-size: 1.3rem;
   }
   
-  .modal-body {
-    padding: 30px;
+  .delete-content {
+    padding: 25px;
   }
   
-  .modal-message {
-    font-size: 1.1rem;
-  }
-  
-  .car-info {
+  .car-info-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
   }
   
-  .modal-footer {
-    padding: 25px 30px;
+  .modal-actions {
+    padding: 20px 25px;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
   
-  .modal-button {
+  .cancel-btn, .delete-confirm-btn {
     width: 100%;
-    padding: 20px 32px;
+    padding: 18px 30px;
   }
 }
 
@@ -342,30 +319,30 @@
   }
   
   .modal-header {
-    padding: 20px 25px;
+    padding: 18px 20px;
   }
   
-  .modal-icon {
-    font-size: 2.5rem;
+  .delete-icon {
+    font-size: 1.6rem;
   }
   
-  .modal-title {
-    font-size: 1.4rem;
+  .modal-header h2 {
+    font-size: 1.2rem;
   }
   
-  .modal-body {
-    padding: 25px;
+  .delete-content {
+    padding: 20px;
   }
   
-  .modal-footer {
-    padding: 20px 25px;
+  .modal-actions {
+    padding: 18px 20px;
   }
   
-  .modal-close {
-    top: 20px;
-    right: 20px;
-    width: 35px;
-    height: 35px;
-    font-size: 1.1rem;
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
   }
 }

@@ -24,8 +24,8 @@ const useNotification = () => {
     }));
   }, []);
 
-  const showSuccess = useCallback((message, duration = 3000) => {
-    showNotification(message, 'success', duration);
+  const showSuccess = useCallback((message, type = 'success', duration = 3000) => {
+    showNotification(message, type, duration);
   }, [showNotification]);
 
   const showError = useCallback((message, duration = 5000) => {
@@ -40,6 +40,10 @@ const useNotification = () => {
     showNotification(message, 'info', duration);
   }, [showNotification]);
 
+  const showDelete = useCallback((message, duration = 5000) => {
+    showNotification(message, 'delete', duration);
+  }, [showNotification]);
+
   return {
     notification,
     showNotification,
@@ -47,7 +51,8 @@ const useNotification = () => {
     showSuccess,
     showError,
     showWarning,
-    showInfo
+    showInfo,
+    showDelete
   };
 };
 

@@ -16,7 +16,7 @@ const CarList = ({ cars: carrosExternos, onCarsUpdate, recarregar, onRecarregarC
   const [carroEmEdicao, setCarroEmEdicao] = useState(null);
   const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
   const [carroParaExcluir, setCarroParaExcluir] = useState(null);
-  const { notification, showSuccess, showError, hideNotification } = useNotification();
+  const { notification, showSuccess, showError, showDelete, hideNotification } = useNotification();
 
   // Usar apenas os carros do estado interno (que vêm do backend + APIs externas)
   const todosCarros = carros;
@@ -81,7 +81,7 @@ const CarList = ({ cars: carrosExternos, onCarsUpdate, recarregar, onRecarregarC
   // Função para confirmar exclusão
   const handleConfirmDelete = async (idCarro) => {
     try {
-      console.log('Confirmando exclusão do carro:', idCarro);
+      console.log('🎯 TESTE DEPLOY - Confirmando exclusão do carro:', idCarro);
       
       // Verificar se o ID é válido
       if (!idCarro || idCarro === 'sem_id') {
@@ -91,6 +91,19 @@ const CarList = ({ cars: carrosExternos, onCarsUpdate, recarregar, onRecarregarC
         return;
       }
       
+      // Encontrar o carro que será excluído para mostrar detalhes
+      const carroParaExcluir = carros.find(carro => carro.id === idCarro);
+      
+      // Fechar modal primeiro
+      setModalDeleteOpen(false);
+      setCarroParaExcluir(null);
+      
+      // Mostrar notificação de processamento
+      showInfo('🔄 Processando exclusão...');
+      
+      // Pequeno delay para criar suspense
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
       // Importar a função da API
       const { deletarCarro } = await import('../../services/api');
       
@@ -99,16 +112,19 @@ const CarList = ({ cars: carrosExternos, onCarsUpdate, recarregar, onRecarregarC
       
       console.log('Carro deletado com sucesso:', resultado);
       
-      // Fechar modal
-      setModalDeleteOpen(false);
-      setCarroParaExcluir(null);
-      
-      // Remover apenas o carro específico do estado local
+      // Remover apenas o carro específico do estado local com animação
       setCarros(carrosAtuais => {
         return carrosAtuais.filter(carro => carro.id !== idCarro);
       });
       
-      showSuccess('Carro excluído com sucesso!');
+      // Criar mensagem personalizada com detalhes do carro
+      let mensagemExclusao = 'Carro excluído com sucesso!';
+      if (carroParaExcluir) {
+        const { nome_modelo, ano, cor, marca } = carroParaExcluir;
+        mensagemExclusao = `🚗 ${marca} ${nome_modelo} (${ano}) - ${cor} removido do catálogo! 🎯`;
+      }
+      
+      showDelete(mensagemExclusao);
     } catch (erro) {
       console.error('Erro ao deletar carro:', erro);
       showError(`Erro ao deletar carro: ${erro.message}`);

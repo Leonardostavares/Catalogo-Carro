@@ -183,7 +183,7 @@ function AppContent() {
   const [carroParaExcluir, setCarroParaExcluir] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const { notification, showSuccess, showError, hideNotification } = useNotification();
+  const { notification, showSuccess, showError, showDelete, hideNotification } = useNotification();
 
   // Detectar quando o usuário volta no browser
   useEffect(() => {
@@ -261,6 +261,7 @@ function AppContent() {
 
   // Função para excluir carro
   const lidarComExclusaoCarro = (carro) => {
+    console.log('🎯 TESTE DEPLOY APP.JS - Iniciando exclusão do carro:', carro);
     // Verificar se é carro do backend (pode ser excluído)
     if (carro.origem !== 'backend') {
       showError('Carros da API externa não podem ser excluídos');
@@ -274,7 +275,7 @@ function AppContent() {
   // Função para confirmar exclusão
   const lidarComConfirmarExclusao = async (idCarro) => {
     try {
-      console.log('Excluindo carro:', idCarro);
+      console.log('🎯 TESTE DEPLOY APP.JS - Excluindo carro:', idCarro);
       console.log('Tipo do ID:', typeof idCarro, 'Valor:', idCarro);
       
       // Verificar se o carro ainda existe no estado
@@ -311,7 +312,7 @@ function AppContent() {
       // Remover o carro do estado
       removerCarroDoContexto(idCarro);
       
-      showSuccess('Carro excluído com sucesso!');
+      showDelete('Carro excluído com sucesso!');
     } catch (error) {
       console.error('Erro ao excluir carro:', error);
       
@@ -576,6 +577,9 @@ function AppContent() {
       <header className="App-header">
         <div className="container">
           <h1>🚗 Catálogo de Carros</h1>
+          <p style={{ color: '#4CAF50', fontSize: '14px', margin: '5px 0', fontWeight: 'bold' }}>
+            ✅ TESTE DEPLOY - Deploy funcionando perfeitamente! 🚀
+          </p>
           <div className="header-buttons">
             <button 
               onClick={() => setMostrarFormulario(true)}
@@ -702,7 +706,7 @@ function BrandCarsPage() {
   const { brandId } = useParams();
   const [selectedBrand, setSelectedBrand] = useState(null);
   const { allCars, isLoading, atualizarCarroNoContexto, removerCarroDoContexto } = useCarContext();
-  const { notification, showSuccess, showError, hideNotification } = useNotification();
+  const { notification, showSuccess, showError, showDelete, hideNotification } = useNotification();
 
   // Função para processar carros para marcas (copiada do AppContent)
   const processarCarrosParaMarcas = (carros) => {
@@ -801,6 +805,7 @@ function BrandCarsPage() {
     setModalDeleteOpen(true);
   };
 
+  // Função para salvar edição (versão simplificada para BrandCarsPage)
   const lidarComSalvarEdicao = async (idCarro, dadosAtualizados) => {
     try {
       console.log('Salvando edição do carro:', idCarro, dadosAtualizados);
@@ -829,6 +834,7 @@ function BrandCarsPage() {
     }
   };
 
+  // Função para confirmar exclusão (versão simplificada para BrandCarsPage)
   const lidarComConfirmarExclusao = async (idCarro) => {
     try {
       console.log('Excluindo carro:', idCarro);
@@ -846,7 +852,7 @@ function BrandCarsPage() {
       // Remover o carro do estado
       removerCarroDoContexto(idCarro);
       
-      showSuccess('Carro excluído com sucesso!');
+      showDelete('Carro excluído com sucesso!');
     } catch (error) {
       console.error('Erro ao excluir carro:', error);
       showError(`Erro ao excluir o carro: ${error.message}`);
