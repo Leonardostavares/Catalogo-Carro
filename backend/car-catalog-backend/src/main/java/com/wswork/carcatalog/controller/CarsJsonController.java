@@ -1,8 +1,11 @@
 package com.wswork.carcatalog.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.wswork.carcatalog.dto.CarroFormatadoDTO;
 import com.wswork.carcatalog.service.CarroService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,26 +39,35 @@ public class CarsJsonController {
      *       "num_portas": 4,
      *       "cor": "BEGE",
      *       "nome_modelo": "ONIX PLUS",
-     *       "valor": 50000,
+     *       "valor": 50,
      *       "marca": "Chevrolet"
      *     }
      *   ]
      * }
      */
-    @GetMapping("/cars.json")
-    public ResponseEntity<Map<String, List<CarroFormatadoDTO>>> getCarsJson() {
+    @GetMapping(value = "/cars.json", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> getCarsJson() {
         try {
             List<CarroFormatadoDTO> carrosFormatados = carroService.buscarTodosFormatados();
             Map<String, List<CarroFormatadoDTO>> resposta = new HashMap<>();
             resposta.put("cars", carrosFormatados);
             
+            // Configurar ObjectMapper para formatação bonita
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            
+            String jsonFormatado = mapper.writeValueAsString(resposta);
+            
             System.out.println("🚗 === ENDPOINT CARS.JSON CHAMADO ===");
             System.out.println("URL: /cars.json");
             System.out.println("Total de carros: " + carrosFormatados.size());
             System.out.println("Formato: cars.json para teste WS Work");
+            System.out.println("JSON formatado e organizado");
             System.out.println("=====================================");
             
-            return ResponseEntity.ok(resposta);
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(jsonFormatado);
         } catch (Exception e) {
             System.out.println("🚨 ERRO NO ENDPOINT CARS.JSON: " + e.getMessage());
             e.printStackTrace();

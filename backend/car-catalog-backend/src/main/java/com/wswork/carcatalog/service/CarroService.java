@@ -315,7 +315,7 @@ public class CarroService {
         dto.setNum_portas(carro.getNumPortas());
         dto.setCor(carro.getCor());
         dto.setNome_modelo(carro.getModelo().getNome());
-        dto.setValor(java.math.BigDecimal.valueOf(carro.getValor()));
+        dto.setValor(carro.getValor().intValue()); // Convertido para Integer
         dto.setMarca(carro.getModelo().getMarca().getNomeMarca()); // Adicionar nome da marca
         return dto;
     }
