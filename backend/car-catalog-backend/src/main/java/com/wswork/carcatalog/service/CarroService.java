@@ -302,9 +302,6 @@ public class CarroService {
         return dto;
     }
     
-    /**
-     * Converter Entity para DTO formatado (cars.json)
-     */
     private CarroFormatadoDTO converterParaFormatadoDTO(Carro carro) {
         CarroFormatadoDTO dto = new CarroFormatadoDTO();
         dto.setId(carro.getId());
@@ -315,8 +312,8 @@ public class CarroService {
         dto.setNum_portas(carro.getNumPortas());
         dto.setCor(carro.getCor());
         dto.setNome_modelo(carro.getModelo().getNome());
-        dto.setValor(carro.getValor().intValue()); // Convertido para Integer
-        dto.setMarca(carro.getModelo().getMarca().getNomeMarca()); // Adicionar nome da marca
+        dto.setValor(carro.getValor().intValue());
+        dto.setMarca(carro.getModelo().getMarca().getNomeMarca());
         return dto;
     }
 }
