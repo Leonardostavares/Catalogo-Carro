@@ -6,6 +6,13 @@ Uma aplicação React moderna para listagem e cadastro de veículos, desenvolvid
 
 Este projeto é uma aplicação frontend que consome dados de APIs externas para exibir um catálogo de carros agrupados por marcas, com funcionalidade de cadastro de novos veículos.
 
+## 🌐 **Links da Aplicação**
+
+- **Frontend**: [https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/](https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/)
+- **Backend API**: [https://car-catalog-backend-leonardo.herokuapp.com](https://car-catalog-backend-leonardo.herokuapp.com)
+- **Dados JSON**: [https://car-catalog-backend-leonardo.herokuapp.com/api/carros](https://car-catalog-backend-leonardo.herokuapp.com/api/carros)
+- **API Alternativa**: [https://car-catalog-backend-leonardo.herokuapp.com/carros](https://car-catalog-backend-leonardo.herokuapp.com/carros)
+
 ### ✨ Funcionalidades
 
 - 📱 **Interface Responsiva** - Funciona em desktop, tablet e mobile

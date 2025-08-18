@@ -1,11 +1,13 @@
-# 🚗 Catálogo de Carros
+# 🚗 Frontend - Catálogo de Carros
 
-Aplicação web moderna para gerenciamento de catálogo de carros, desenvolvida com React e integração com backend Java/Spring Boot.
+Aplicação React moderna para gerenciamento de catálogo de carros com integração completa ao backend Java/Spring Boot.
 
 ## 🌐 **Aplicação Online**
 
-- **Frontend**: [https://car-catalog-frontend-leonardo.herokuapp.com](https://car-catalog-frontend-leonardo.herokuapp.com)
+- **Frontend**: [https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/](https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/)
 - **Backend API**: [https://car-catalog-backend-leonardo.herokuapp.com](https://car-catalog-backend-leonardo.herokuapp.com)
+- **Dados JSON**: [https://car-catalog-backend-leonardo.herokuapp.com/api/carros](https://car-catalog-backend-leonardo.herokuapp.com/api/carros)
+- **API Alternativa**: [https://car-catalog-backend-leonardo.herokuapp.com/carros](https://car-catalog-backend-leonardo.herokuapp.com/carros)
 
 ## ✨ Funcionalidades
 
@@ -18,18 +20,11 @@ Aplicação web moderna para gerenciamento de catálogo de carros, desenvolvida 
 
 ## 🛠️ Tecnologias Utilizadas
 
-### Frontend
 - **React 18** - Biblioteca principal
 - **React Router** - Navegação entre páginas
 - **Context API** - Gerenciamento de estado global
 - **CSS3** - Estilização moderna e responsiva
 - **JavaScript ES6+** - Funcionalidades avançadas
-
-### Backend
-- **Java 21** - Linguagem principal
-- **Spring Boot** - Framework backend
-- **MySQL** - Banco de dados
-- **REST API** - Comunicação frontend/backend
 
 ## 📁 Estrutura do Projeto
 
@@ -87,7 +82,7 @@ npm install
 
 3. **Configure as variáveis de ambiente (opcional)**
 ```bash
-# Crie um arquivo .env na raiz do frontend (se quiser usar URL personalizada)
+# Crie um arquivo .env na raiz do frontend
 REACT_APP_BACKEND_URL=https://car-catalog-backend-leonardo.herokuapp.com
 ```
 
@@ -104,7 +99,7 @@ http://localhost:3000
 ## 🔧 Configuração
 
 ### Variáveis de Ambiente
-- `REACT_APP_BACKEND_URL` - URL da API backend (padrão: https://car-catalog-backend-leonardo.herokuapp.com)
+- `REACT_APP_BACKEND_URL` - URL da API backend
 
 ### Backend
 O backend Java/Spring Boot está hospedado no Heroku e já configurado para uso.
@@ -114,7 +109,7 @@ O backend Java/Spring Boot está hospedado no Heroku e já configurado para uso.
 
 ### Frontend
 O frontend React está hospedado no Heroku e disponível em:
-- **URL**: https://car-catalog-frontend-leonardo.herokuapp.com
+- **URL**: https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/
 - **Stack**: Node.js (Cedar)
 - **Status**: ✅ Ativo
 
@@ -164,11 +159,11 @@ Hook para funcionalidades de busca:
 ## 🔌 Integração com API
 
 ### Endpoints Utilizados
-- `GET https://car-catalog-backend-leonardo.herokuapp.com/api/carros` - Listar carros
-- `POST https://car-catalog-backend-leonardo.herokuapp.com/api/carros` - Criar carro
-- `PUT https://car-catalog-backend-leonardo.herokuapp.com/api/carros/{id}` - Atualizar carro
-- `DELETE https://car-catalog-backend-leonardo.herokuapp.com/api/carros/{id}` - Excluir carro
-- `GET https://car-catalog-backend-leonardo.herokuapp.com/api/carros/{id}` - Verificar existência
+- `GET /api/carros` - Listar carros
+- `POST /api/carros` - Criar carro
+- `PUT /api/carros/{id}` - Atualizar carro
+- `DELETE /api/carros/{id}` - Excluir carro
+- `GET /api/carros/{id}` - Verificar existência
 
 ### Formato de Dados
 ```javascript
@@ -226,21 +221,13 @@ npx serve -s build
 
 ## 🚀 Deploy
 
-### Heroku (Configurado)
+### Heroku
 ```bash
-# Backend já está deployado em:
-# https://car-catalog-backend-leonardo.herokuapp.com
-
-# Frontend já está deployado em:
-# https://car-catalog-frontend-leonardo.herokuapp.com
-
-# Para fazer deploy do frontend:
-git add .
-git commit -m "Update for Heroku deployment"
+# Deploy automático
 git push heroku main
 ```
 
-### Vercel (Alternativa)
+### Vercel
 ```bash
 # Instalar Vercel CLI
 npm i -g vercel
@@ -257,20 +244,6 @@ vercel
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👨‍💻 Desenvolvedor
-
-- **Nome**: [Seu Nome]
-- **Email**: [seu-email@exemplo.com]
-- **LinkedIn**: [linkedin.com/in/seu-perfil]
-
-## 📞 Suporte
-
-Para suporte, envie um email para [seu-email@exemplo.com] ou abra uma issue no repositório.
-
 ---
 
-**Desenvolvido com ❤️ usando React e Spring Boot**
+**Desenvolvido com React e integração Spring Boot**
