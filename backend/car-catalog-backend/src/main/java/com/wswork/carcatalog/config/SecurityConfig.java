@@ -32,21 +32,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
-        // URLs permitidas
-        List<String> allowedOrigins = Arrays.asList(
-            "https://car-frontend-leo-cbf29182969f.herokuapp.com",
-            "https://car-frontend-leo.herokuapp.com",
-            "https://car-catalog-frontend-leonardo-ee72ebc72d08.herokuapp.com",
-            "https://car-catalog-frontend-leonardo.herokuapp.com",
-            "http://localhost:3000",
-            "http://localhost:3001",
-            "*"
-        );
-        
-        configuration.setAllowedOrigins(allowedOrigins);
+        // Permitir todas as origens para resolver problema de CORS
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setAllowCredentials(true);
+        configuration.setAllowCredentials(false); // Mudar para false quando usar "*"
         configuration.setExposedHeaders(Arrays.asList("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"));
         
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
