@@ -5,8 +5,7 @@ Aplicação React moderna para gerenciamento de catálogo de carros com integra�
 ## 🌐 **Aplicação Online**
 
 - **Frontend**: [https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/](https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/)
-- **Backend API**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com)
-- **Dados JSON**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros)
+- **API JSON**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros)
 
 ## ✨ Funcionalidades
 
