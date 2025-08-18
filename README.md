@@ -9,9 +9,9 @@ Este projeto é uma aplicação frontend que consome dados de APIs externas para
 ## 🌐 **Links da Aplicação**
 
 - **Frontend**: [https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/](https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/)
-- **Backend API**: [https://car-catalog-backend-leonardo.herokuapp.com](https://car-catalog-backend-leonardo.herokuapp.com)
-- **Dados JSON**: [https://car-catalog-backend-leonardo.herokuapp.com/api/carros](https://car-catalog-backend-leonardo.herokuapp.com/api/carros)
-- **API Alternativa**: [https://car-catalog-backend-leonardo.herokuapp.com/carros](https://car-catalog-backend-leonardo.herokuapp.com/carros)
+- **Backend API**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com)
+- **Dados JSON**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros)
+- **API Alternativa**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/carros)
 
 ### ✨ Funcionalidades
 

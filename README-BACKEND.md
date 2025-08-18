@@ -4,10 +4,10 @@ API REST completa desenvolvida em Java/Spring Boot para gerenciamento de catálo
 
 ## 🌐 **API Online**
 
-- **Backend API**: [https://car-catalog-backend-leonardo.herokuapp.com](https://car-catalog-backend-leonardo.herokuapp.com)
+- **Backend API**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com)
 - **Frontend**: [https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/](https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/)
-- **Dados JSON**: [https://car-catalog-backend-leonardo.herokuapp.com/api/carros](https://car-catalog-backend-leonardo.herokuapp.com/api/carros)
-- **API Alternativa**: [https://car-catalog-backend-leonardo.herokuapp.com/carros](https://car-catalog-backend-leonardo.herokuapp.com/carros)
+- **Dados JSON**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros)
+- **API Alternativa**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/carros)
 
 ## ✨ Funcionalidades da API
 
@@ -281,8 +281,8 @@ heroku config:set DATABASE_URL=jdbc:mysql://...
 ## 📚 Documentação da API
 
 ### Swagger UI
-- **URL**: https://car-catalog-backend-leonardo.herokuapp.com/swagger-ui.html
-- **OpenAPI**: https://car-catalog-backend-leonardo.herokuapp.com/v3/api-docs
+- **URL**: https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/swagger-ui.html
+- **OpenAPI**: https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/v3/api-docs
 
 ### Endpoints de Saúde
 - `GET /actuator/health` - Status da aplicação

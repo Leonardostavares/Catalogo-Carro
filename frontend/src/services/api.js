@@ -1,5 +1,5 @@
 // URL do backend Heroku
-const URL_BASE_BACKEND = process.env.REACT_APP_BACKEND_URL || 'https://car-catalog-backend-leonardo.herokuapp.com';
+const URL_BASE_BACKEND = process.env.REACT_APP_BACKEND_URL || 'https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com';
 
 const buscarComTratamentoErro = async (url, opcoes = {}) => {
   try {

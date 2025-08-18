@@ -5,9 +5,9 @@ Aplicação React moderna para gerenciamento de catálogo de carros com integra�
 ## 🌐 **Aplicação Online**
 
 - **Frontend**: [https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/](https://car-catalog-frontend-leonardo-44399dbbc729.herokuapp.com/)
-- **Backend API**: [https://car-catalog-backend-leonardo.herokuapp.com](https://car-catalog-backend-leonardo.herokuapp.com)
-- **Dados JSON**: [https://car-catalog-backend-leonardo.herokuapp.com/api/carros](https://car-catalog-backend-leonardo.herokuapp.com/api/carros)
-- **API Alternativa**: [https://car-catalog-backend-leonardo.herokuapp.com/carros](https://car-catalog-backend-leonardo.herokuapp.com/carros)
+- **Backend API**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com)
+- **Dados JSON**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/api/carros)
+- **API Alternativa**: [https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/carros](https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com/carros)
 
 ## ✨ Funcionalidades
 
@@ -83,7 +83,7 @@ npm install
 3. **Configure as variáveis de ambiente (opcional)**
 ```bash
 # Crie um arquivo .env na raiz do frontend
-REACT_APP_BACKEND_URL=https://car-catalog-backend-leonardo.herokuapp.com
+REACT_APP_BACKEND_URL=https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com
 ```
 
 4. **Execute a aplicação**
@@ -103,7 +103,7 @@ http://localhost:3000
 
 ### Backend
 O backend Java/Spring Boot está hospedado no Heroku e já configurado para uso.
-- **URL**: https://car-catalog-backend-leonardo.herokuapp.com
+- **URL**: https://car-catalog-backend-leonardo-1f7a541f8578.herokuapp.com
 - **Stack**: Java (Cedar)
 - **Status**: ✅ Ativo
 
