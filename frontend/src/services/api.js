@@ -101,3 +101,26 @@ export const deletarCarro = async (idCarro) => {
     throw new Error('Falha ao deletar o carro. Tente novamente.');
   }
 };
+
+export const verificarSeCarroExiste = async (idCarro) => {
+  try {
+    const resposta = await fetch(`${URL_BASE_BACKEND}/api/carros/${idCarro}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+
+    return resposta.ok;
+  } catch (erro) {
+    return false;
+  }
+};
+
+export const limparCache = () => {
+  // Função para limpar cache (não faz nada no frontend, mas mantém compatibilidade)
+  if (typeof window !== 'undefined') {
+    localStorage.clear();
+    sessionStorage.clear();
+  }
+};
