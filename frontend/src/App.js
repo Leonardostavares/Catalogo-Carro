@@ -616,15 +616,18 @@ function AppContent() {
                     brands={processarCarrosParaMarcas(allCars).map(brand => brand.name)}
                   />
                   
-                  {searchResults.length > 0 ? (
-                    <div className="search-results">
-                      <div className="search-results-header">
-                        <h3>🔍 Resultados da busca ({searchResults.length})</h3>
-                        <button onClick={handleClearSearch} className="back-btn">
-                          <span>⬅️</span>
-                          <span>Voltar à Listagem</span>
-                        </button>
-                      </div>
+                                     {searchResults.length > 0 ? (
+                     <div className="search-results">
+                       <div className="search-results-header">
+                         <div className="search-results-info">
+                           <h3>🔍 Resultados da busca</h3>
+                           <span className="search-count">{searchResults.length} carro{searchResults.length !== 1 ? 's' : ''} encontrado{searchResults.length !== 1 ? 's' : ''}</span>
+                         </div>
+                         <button onClick={handleClearSearch} className="back-btn">
+                           <span>⬅️</span>
+                           <span>Voltar</span>
+                         </button>
+                       </div>
                       <div className="cars-grid">
                         {searchResults.map((car, index) => (
                           <CarCard 
