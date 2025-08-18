@@ -209,6 +209,52 @@ public class CarroController {
     }
     
     /**
+     * GET /cars.json - Endpoint específico para o teste da WS Work
+     * Retorna carros no formato cars.json conforme especificação do teste
+     */
+    @GetMapping("/cars.json")
+    public ResponseEntity<Map<String, List<CarroFormatadoDTO>>> getCarsJson() {
+        try {
+            List<CarroFormatadoDTO> carrosFormatados = carroService.buscarTodosFormatados();
+            Map<String, List<CarroFormatadoDTO>> resposta = new HashMap<>();
+            resposta.put("cars", carrosFormatados);
+            
+            System.out.println("🚗 === ENDPOINT CARS.JSON CHAMADO ===");
+            System.out.println("Total de carros: " + carrosFormatados.size());
+            System.out.println("Formato: cars.json para teste WS Work");
+            System.out.println("=====================================");
+            
+            return ResponseEntity.ok(resposta);
+        } catch (Exception e) {
+            System.out.println("🚨 ERRO NO ENDPOINT CARS.JSON: " + e.getMessage());
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+    
+    /**
+     * GET /api/cars.json - Endpoint alternativo para o teste da WS Work
+     * Retorna carros no formato cars.json conforme especificação do teste
+     */
+    @GetMapping("/api/cars.json")
+    public ResponseEntity<Map<String, List<CarroFormatadoDTO>>> getCarsJsonAlternative() {
+        try {
+            List<CarroFormatadoDTO> carrosFormatados = carroService.buscarTodosFormatados();
+            Map<String, List<CarroFormatadoDTO>> resposta = new HashMap<>();
+            resposta.put("cars", carrosFormatados);
+            
+            System.out.println("🚗 === ENDPOINT API/CARS.JSON CHAMADO ===");
+            System.out.println("Total de carros: " + carrosFormatados.size());
+            System.out.println("Formato: cars.json para teste WS Work");
+            System.out.println("=====================================");
+            
+            return ResponseEntity.ok(resposta);
+        } catch (Exception e) {
+            System.out.println("🚨 ERRO NO ENDPOINT API/CARS.JSON: " + e.getMessage());
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+    
+    /**
      * GET /api/carros/debug/existe/{id} - Verificar se carro existe (debug)
      */
     @GetMapping("/debug/existe/{id}")

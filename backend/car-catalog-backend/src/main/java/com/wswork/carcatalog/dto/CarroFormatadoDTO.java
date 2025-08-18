@@ -23,4 +23,5 @@ public class CarroFormatadoDTO {
     private String cor;
     private String nome_modelo;
     private BigDecimal valor;
+    private String marca; // Nome da marca conforme especificação do teste
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Controller para operações REST relacionadas a Modelo
@@ -99,6 +101,28 @@ public class ModeloController {
             return ResponseEntity.noContent().build();
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
+        }
+    }
+    
+    /**
+     * GET /api/modelos/formatado - Listar modelos no formato cars.json para o frontend
+     * Endpoint específico para o teste da WS Work
+     */
+    @GetMapping("/formatado")
+    public ResponseEntity<Map<String, List<ModeloDTO>>> listarModelosFormatados() {
+        try {
+            List<ModeloDTO> modelos = modeloService.buscarTodos();
+            Map<String, List<ModeloDTO>> resposta = new HashMap<>();
+            resposta.put("cars", modelos);
+            
+            System.out.println("🚗 === ENDPOINT MODELOS FORMATADO CHAMADO ===");
+            System.out.println("Total de modelos: " + modelos.size());
+            System.out.println("=============================================");
+            
+            return ResponseEntity.ok(resposta);
+        } catch (Exception e) {
+            System.out.println("🚨 ERRO NO ENDPOINT MODELOS FORMATADO: " + e.getMessage());
+            return ResponseEntity.internalServerError().build();
         }
     }
 }

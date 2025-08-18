@@ -1,5 +1,5 @@
 // URLs base da API
-const URL_BASE_BACKEND = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
+const URL_BASE_BACKEND = process.env.REACT_APP_BACKEND_URL || 'https://car-catalog-backend-leo.herokuapp.com';
 
 // Função para fazer requisições HTTP com tratamento de erro
 const buscarComTratamentoErro = async (url, opcoes = {}) => {
