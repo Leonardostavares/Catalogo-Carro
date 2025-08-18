@@ -28,9 +28,7 @@ const CarForm = ({ onSubmit, onCancel }) => {
   const opcoesPortas = [
     { value: '', label: 'Selecione o número de portas' },
     { value: '2', label: '2 portas' },
-    { value: '3', label: '3 portas' },
-    { value: '4', label: '4 portas' },
-    { value: '5', label: '5 portas' }
+    { value: '4', label: '4 portas' }
   ];
 
   const opcoesCor = [
