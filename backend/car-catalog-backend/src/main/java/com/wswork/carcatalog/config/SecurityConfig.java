@@ -35,10 +35,12 @@ public class SecurityConfig {
         // URLs permitidas
         List<String> allowedOrigins = Arrays.asList(
             "https://car-frontend-leo-cbf29182969f.herokuapp.com",
+            "https://car-frontend-leo.herokuapp.com",
             "https://car-catalog-frontend-leonardo-ee72ebc72d08.herokuapp.com",
             "https://car-catalog-frontend-leonardo.herokuapp.com",
             "http://localhost:3000",
-            "http://localhost:3001"
+            "http://localhost:3001",
+            "*"
         );
         
         configuration.setAllowedOrigins(allowedOrigins);
