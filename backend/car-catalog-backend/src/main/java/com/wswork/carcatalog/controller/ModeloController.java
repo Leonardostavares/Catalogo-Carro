@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/modelos")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // Permite requisições de qualquer origem (necessário para Heroku)
+@CrossOrigin(origins = "*") // Permite requisições de qualquer origem
 public class ModeloController {
     
     private final ModeloService modeloService;

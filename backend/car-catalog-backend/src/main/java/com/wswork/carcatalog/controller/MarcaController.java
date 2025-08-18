@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/marcas")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // Permite requisições de qualquer origem (necessário para Heroku)
+@CrossOrigin(origins = "*") // Permite requisições de qualquer origem
 public class MarcaController {
     
     private final MarcaService marcaService;

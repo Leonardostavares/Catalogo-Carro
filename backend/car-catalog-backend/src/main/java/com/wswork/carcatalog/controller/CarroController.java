@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @RestController
 @RequestMapping("/api/carros")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // Permite requisições de qualquer origem (necessário para Heroku)
+@CrossOrigin(origins = "*") // Permite requisições de qualquer origem
 public class CarroController {
     
     private final CarroService carroService;
