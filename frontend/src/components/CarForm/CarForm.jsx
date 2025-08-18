@@ -30,7 +30,7 @@ const CarForm = ({ onSubmit, onCancel }) => {
     { value: '2', label: '2 portas' },
     { value: '4', label: '4 portas' }
   ];
-
+  
   const opcoesCor = [
     { value: '', label: 'Selecione a cor' },
     { value: 'BRANCO', label: 'Branco' },
